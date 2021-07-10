@@ -35,7 +35,7 @@ const Dashboard = () => {
       .then(toJson)
       .then((json) => {
         setPics(json.results);
-        setIsloading(false);
+        // setIsloading(false);
       });
     console.log("pics", pics);
   };
@@ -48,7 +48,7 @@ const Dashboard = () => {
         setPics(json.results);
         setIsloading(false);
       });
-  }, [pics, query, unsplash.search]);
+  }, []);
 
   return (
     <div className='dashboard__wrapper'>

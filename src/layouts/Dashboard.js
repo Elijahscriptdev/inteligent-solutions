@@ -18,7 +18,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
-  const [query, setQuery] = useState("party");
+  const [query, setQuery] = useState("family");
   const [pics, setPics] = useState([]);
   const [isLoading, setIsloading] = useState(true);
 
@@ -48,7 +48,7 @@ const Dashboard = () => {
         setPics(json.results);
         setIsloading(false);
       });
-  }, [pics]);
+  }, [pics, query, unsplash.search]);
 
   return (
     <div className='dashboard__wrapper'>

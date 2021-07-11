@@ -35,9 +35,10 @@ const Dashboard = () => {
       .then(toJson)
       .then((json) => {
         setPics(json.results);
-        // setIsloading(false);
+        setIsloading(false);
       });
     console.log("pics", pics);
+    // console.log("pics", pics);
   };
 
   useEffect(() => {

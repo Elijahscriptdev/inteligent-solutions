@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiSearch } from "react-icons/bi";
-import Unsplash, { toJson } from "unsplash-js";
+import axios from "axios";
 import "./Dashboard.scss";
-// import Search from "../component/Search";
 import NavBar from "../component/NavBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -24,31 +23,26 @@ const Dashboard = () => {
 
   const key = process.env.REACT_APP_UNSPLASH_KEY;
 
-  const unsplash = new Unsplash({
-    accessKey: key,
-  });
+  const getImageData = async () => {
+    try {
+      const res = await axios.get(
+        `https://api.unsplash.com/search/photos?query=${query}&client_id=${key}`
+      );
+      const data = res?.data?.results;
+      setPics(data);
+      setIsloading(false);
+    } catch (error) {
+      console.log("error", error.message);
+    }
+  };
 
   const searchPhotos = async (e) => {
     e.preventDefault();
-    unsplash.search
-      .photos(query, 1, 10)
-      .then(toJson)
-      .then((json) => {
-        setPics(json.results);
-        setIsloading(false);
-      });
-    console.log("pics", pics);
-    // console.log("pics", pics);
+    getImageData();
   };
 
   useEffect(() => {
-    unsplash.search
-      .photos(query, 1, 10)
-      .then(toJson)
-      .then((json) => {
-        setPics(json.results);
-        setIsloading(false);
-      });
+    getImageData();
   }, []);
 
   return (
@@ -147,7 +141,7 @@ const Dashboard = () => {
             pics &&
             pics.map((data) => (
               <div className='cards' key={data.id}>
-                <img alt={data.alt_description} src={data.urls.full} />
+                <img alt={data.alt_description} src={data.urls.small} />
               </div>
             ))
           )}

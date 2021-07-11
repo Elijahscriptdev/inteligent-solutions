@@ -31,7 +31,7 @@ const Dashboard = () => {
   const searchPhotos = async (e) => {
     e.preventDefault();
     unsplash.search
-      .photos(query, 1, 10)
+      .photos(query, 1, 30)
       .then(toJson)
       .then((json) => {
         setPics(json.results);

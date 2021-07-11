@@ -14,6 +14,9 @@ import {
   faUsers,
   faGlassCheers,
   faGem,
+  faHeart,
+  faThumbsDown,
+  faMapMarker,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
@@ -35,6 +38,8 @@ const Dashboard = () => {
       console.log("error", error.message);
     }
   };
+
+  console.log("pics", pics);
 
   const searchPhotos = async (e) => {
     e.preventDefault();
@@ -142,6 +147,24 @@ const Dashboard = () => {
             pics.map((data) => (
               <div className='cards' key={data.id}>
                 <img alt={data.alt_description} src={data.urls.small} />
+                <div className='more__info'>
+                  <p className='name'>
+                    {data?.user?.first_name},{" "}
+                    <span>{data?.user?.total_photos}</span>{" "}
+                  </p>
+                  <p className='location'>
+                    <FontAwesomeIcon icon={faMapMarker} />{" "}
+                    {data?.user?.location}
+                  </p>
+                  <div className='social'>
+                    <p className='heart'>
+                      <FontAwesomeIcon icon={faHeart} />
+                    </p>
+                    <p className='thumb'>
+                      <FontAwesomeIcon icon={faThumbsDown} />
+                    </p>
+                  </div>
+                </div>
               </div>
             ))
           )}

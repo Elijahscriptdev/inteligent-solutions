@@ -17,6 +17,7 @@ import {
   faHeart,
   faThumbsDown,
   faMapMarker,
+  faBars,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
@@ -117,6 +118,15 @@ const Dashboard = () => {
 
       <div className='dashboard__content'>
         {/* <Search /> */}
+        <div className='mobile__header'>
+          <div className='logo'>
+            <FontAwesomeIcon icon={faGem} /> bluecube
+          </div>
+
+          <div className='menu'>
+            <FontAwesomeIcon icon={faBars} />
+          </div>
+        </div>
         <div className='search__wrapper'>
           <div className='search__container'>
             <BiSearch className='icon' />

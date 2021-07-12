@@ -152,8 +152,13 @@ const Dashboard = () => {
               <li className='bell__icon' onClick={handleNotifications}>
                 <FontAwesomeIcon icon={faBell} />
               </li>
-              <li>picture</li>
-              <li>name</li>
+              <li className='profile__img'>
+                <img
+                  src='https://res.cloudinary.com/elijjaaahhhh/image/upload/v1570185801/image_2.1_qc4ywr.png'
+                  alt='img'
+                />
+              </li>
+              <li className='name'>Elijah</li>
             </ul>
             {showNotification}
             {showNotification && (

@@ -135,12 +135,74 @@
       .notifications__container {
         align-items: center;
         padding: 12px 0px;
+        position: relative;
         ul {
           display: flex;
           flex-direction: row;
 
           li {
             margin: 0 10px;
+          }
+
+          .bell__icon {
+            color: #3a309f;
+            font-size: 1.5rem;
+            cursor: pointer;
+          }
+        }
+
+        .arrow__up {
+          color: #ffffff;
+          position: absolute;
+          top: 65px;
+          left: 16px;
+          font-size: 1.5rem;
+        }
+
+        .notification__wrapper {
+          position: absolute;
+          top: 85px;
+          right: 0;
+          z-index: 99999;
+          width: 250px;
+          border-radius: 10px;
+          background: #ffffff;
+          box-shadow: 4px 0px 10px rgba(43, 53, 130, 0.07);
+          align-items: center;
+          .notification__content {
+            display: flex;
+            flex-direction: row;
+            padding: 15px 20px;
+            justify-content: space-between;
+            // border-bottom: 1px solid #d0ced6;
+            align-items: center;
+
+            .profile__img {
+              width: 30px;
+
+              img {
+                width: 100%;
+              }
+            }
+
+            .notification__msg {
+              color: #868492;
+              h3 {
+                font-size: 0.9rem;
+              }
+              p {
+                font-size: 0.7rem;
+              }
+            }
+
+            .notification_icon {
+              color: #868492;
+            }
+          }
+
+          .two {
+            border-bottom: 1px solid #d0ced6;
+            border-top: 1px solid #d0ced6;
           }
         }
       }

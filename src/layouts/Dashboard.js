@@ -18,14 +18,21 @@ import {
   faThumbsDown,
   faMapMarker,
   faBars,
+  faBell,
+  faCaretUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
   const [query, setQuery] = useState("guys");
   const [pics, setPics] = useState([]);
   const [isLoading, setIsloading] = useState(true);
+  const [showNotification, setShowNotification] = useState(false);
 
   const key = process.env.REACT_APP_UNSPLASH_KEY;
+
+  const handleNotifications = () => {
+    setShowNotification(!showNotification);
+  };
 
   const getImageData = async () => {
     try {
@@ -142,10 +149,67 @@ const Dashboard = () => {
           </div>
           <div className='notifications__container'>
             <ul>
-              <li>bell</li>
+              <li className='bell__icon' onClick={handleNotifications}>
+                <FontAwesomeIcon icon={faBell} />
+              </li>
               <li>picture</li>
               <li>name</li>
             </ul>
+            {showNotification}
+            {showNotification && (
+              <>
+                <div className='arrow__up'>
+                  <FontAwesomeIcon icon={faCaretUp} />
+                </div>
+                <div className='notification__wrapper'>
+                  <div className='notification__content'>
+                    <div className='profile__img'>
+                      <img
+                        src='https://res.cloudinary.com/elijjaaahhhh/image/upload/v1570185801/image_2.1_qc4ywr.png'
+                        alt='img'
+                      />
+                    </div>
+                    <div className='notification__msg'>
+                      <h3>Micheal Liked you</h3>
+                      <p>abpout 20 minutes ago</p>
+                    </div>
+                    <div className='notification_icon'>
+                      <FontAwesomeIcon icon={faHeart} />
+                    </div>
+                  </div>
+                  <div className='notification__content two'>
+                    <div className='profile__img'>
+                      <img
+                        src='https://res.cloudinary.com/elijjaaahhhh/image/upload/v1570185801/image_2.1_qc4ywr.png'
+                        alt='img'
+                      />
+                    </div>
+                    <div className='notification__msg'>
+                      <h3>Micheal Liked you</h3>
+                      <p>abpout 20 minutes ago</p>
+                    </div>
+                    <div className='notification_icon'>
+                      <FontAwesomeIcon icon={faHeart} />
+                    </div>
+                  </div>
+                  <div className='notification__content'>
+                    <div className='profile__img'>
+                      <img
+                        src='https://res.cloudinary.com/elijjaaahhhh/image/upload/v1570185801/image_2.1_qc4ywr.png'
+                        alt='img'
+                      />
+                    </div>
+                    <div className='notification__msg'>
+                      <h3>Micheal Liked you</h3>
+                      <p>abpout 20 minutes ago</p>
+                    </div>
+                    <div className='notification_icon'>
+                      <FontAwesomeIcon icon={faHeart} />
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         </div>
         <NavBar />

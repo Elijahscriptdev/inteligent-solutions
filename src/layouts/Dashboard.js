@@ -46,9 +46,7 @@ const Dashboard = () => {
       console.log("error", error.message);
     }
   };
-
-  console.log("pics", pics);
-
+  
   const searchPhotos = async (e) => {
     e.preventDefault();
     getImageData();

@@ -32,7 +32,7 @@ You are equally expected to share the Git repository link with us. We suggest yo
 
 ## Images
 
-![homepage](https://res.cloudinary.com/elijjaaahhhh/image/upload/v1626050288/FireShot_Capture_304_-_React_App_-_intelligent-solutions-tasks.netlify.app_tiyr4u.png)
+![homepage](https://res.cloudinary.com/elijjaaahhhh/image/upload/v1626100031/FireShot_Capture_305_-_React_App_-_localhost_tug4t0.png)
 
 ## Prerequisites
 

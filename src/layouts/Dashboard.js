@@ -21,7 +21,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 const Dashboard = () => {
-  const [query, setQuery] = useState("family");
+  const [query, setQuery] = useState("guys");
   const [pics, setPics] = useState([]);
   const [isLoading, setIsloading] = useState(true);
 

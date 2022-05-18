@@ -2,14 +2,22 @@ import { useEffect, useState } from 'react';
 import './App.scss';
 
 const App = () => {
+  //creating an array
+  const newArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+  //creating a count state
   const [count, setCount] = useState(0);
+
+  
   const [query, setQuery] = useState("guys");
   const [pics, setPics] = useState([]);
   const [isLoading, setIsloading] = useState(true);
   
   const key = "XbKOljq_mz5UmCja0MByQGAJi41olwZh_uoG_7P9gfI";
 
+  //creating a function to increment the count state
   const add = () => setCount(count + 1);
+  //creating a function to decrement the count state
   const decrease = () => setCount(count - 1);
 
   const getImageData = async () => {
